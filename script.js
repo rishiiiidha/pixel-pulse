@@ -8,10 +8,13 @@ let page = 1;
 
 async function searchImages() {
   inputData = inputE1.value;
+  // we receive the value given into the text box and store inside the inputData 
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`;
 
-  const response = await fetch(url);
-  const data = await response.json();
+  const rawResponse = await fetch(url);
+  // we sent the request to the Unsplash API through the URL we receive the response when the request is resolved and saved inside the rawResponse which is not human readable
+  const data = await rawResponse.json();
+  //we again used await because the line should run only once rawResponse is received the request now we use this human readable data
 
   const results = data.results;
   if (page === 1) {
@@ -41,6 +44,7 @@ async function searchImages() {
 
 formE1.addEventListener("submit", (event) => {
   event.preventDefault();
+  //prevents the default action to e done
   page = 1;
   searchImages();
 });
