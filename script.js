@@ -18,7 +18,7 @@ async function searchImages() {
     searchResults.innerHTML = "";
   }
 
-  results.map((result) => {
+  results.forEach((result) => {
     const imageWrapper = document.createElement("div");
     imageWrapper.classList.add("search-result");
     const image = document.createElement("img");
