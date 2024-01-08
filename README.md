@@ -1,4 +1,4 @@
-# Image Search Web App
+# Pixel Pulse: Explore Infinite Imagery
 
 This is a responsive web application that allows users to search and display images from the Unsplash API. It provides a straightforward interface for image search and display.
 
